@@ -3,8 +3,9 @@ import type { Metadata } from 'next';
 import Head from 'next/head';
 import Script from 'next/script';
 import Link from 'next/link';
-import { BASE_URL, DESCRIPTION, TITLE } from '../constants';
-import FooterComponent from '../components/FooterComponent';
+import { BASE_URL, DESCRIPTION, TITLE } from '@/constants';
+import FooterComponent from '@/components/FooterComponent';
+import { FreeConsultationStateProvider } from '@/providers';
 
 export const metadata: Metadata = {
     metadataBase: new URL(`${BASE_URL}`),
@@ -56,19 +57,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body>
                 <noscript><img height="1" width="1" style={{"display": "none"}} src="https://www.facebook.com/tr?id=1214536933507980&ev=PageView&noscript=1" /></noscript>
                 <div id="root">
-                    <nav>
-                        {/* Navigation links */}
-                        <Link href="/">Home</Link> |{" "}
-                        <Link href="/learn_more">Learn More</Link> |{" "}
-                        <Link href="/relatable_stories">Relatable Stories</Link> |{" "}
-                        <Link href="/client_sessions">Client Sessions</Link> |{" "}
-                        <Link href="/about_me">About Me</Link> |{" "}
-                        <Link href="/free_consultation">Free Consultation</Link>
-                    </nav>
-                    <div className="h-8"/>
-                    {children}
-                    <br />
-                    <FooterComponent />
+                    <FreeConsultationStateProvider>
+                        <nav>
+                            {/* Navigation links */}
+                            <Link href="/">Home</Link> |{" "}
+                            <Link href="/learn_more">Learn More</Link> |{" "}
+                            <Link href="/relatable_stories">Relatable Stories</Link> |{" "}
+                            <Link href="/client_sessions">Client Sessions</Link> |{" "}
+                            <Link href="/about_me">About Me</Link> |{" "}
+                            <Link href="/free_consultation">Free Consultation</Link>
+                        </nav>
+                        <div className="h-8"/>
+                        {children}
+                        <br />
+                        <FooterComponent />
+                    </FreeConsultationStateProvider>
                 </div>
             </body>
 

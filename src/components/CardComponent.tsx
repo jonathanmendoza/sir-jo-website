@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 export default function CardComponent(prop: {itemKey?: string, width?: string, title: React.ReactNode, body?: string, image?: string, isSquare?: boolean, ctaText?: React.ReactNode, to: string}) {
@@ -11,7 +9,7 @@ export default function CardComponent(prop: {itemKey?: string, width?: string, t
                 <h3><b>{prop.title}</b></h3>
                 {prop.body && <p style={{textIndent: 0}} className="italic">{prop.body}</p>}
                 {prop.image && <img src={prop.image}/>}
-                {prop.ctaText && prop.to && <Link className="animate-gentlePulse" href={prop.to}>{prop.ctaText}</Link>}
+                {prop.ctaText && prop.to && <p style={{textIndent: 0}} className="animate-gentlePulse">{prop.ctaText}</p>}
             </div>
         </Link>
     );

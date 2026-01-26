@@ -1,10 +1,12 @@
+"use client";
+
 import HeadlineComponent from "./HeadlineComponent";
 import SpanEmoji from "./SpanEmoji";
 import { useCallback, useEffect, useState } from "react";
-import { ALLOWED_ANNUAL_TUITION_FEE, ALLOWED_CRITICAL_ILLNESS_BENEFIT, ALLOWED_DISABILITY_INCOME_PROTECTION, ALLOWED_DREAM_BUILDERS, ALLOWED_EDUCATION_PLANNING, ALLOWED_INCOME_PROTECTION, ALLOWED_RETIREMENT_PLANNING, AVERAGE_LIFE_SPAN_IN_YEARS, CHILD_COLLEGE_ENTRY_AGE, FBB_KEYS, INFLATION_RATE, MAX_RETIREMENT_MONTHLY_PENSION_CURRENT_SALARY_MULTIPLIER, MINIMUM_INVESTMENT_WITHDRAWAL_YEAR, MONTHS_IN_A_YEAR, OTP_LENGTH, PESO_FORMAT, PRIORITIES } from "../app/constantsnts";
-import { useContactInfo, useContactInfoCallbacks, useFreeConsultationSubmitCallback, useFreeConsultationSubmitInfoStatus, usePersonalInfo, usePersonalInfoCallbacks, usePrioritiesAndGoalInfo, usePrioritiesAndGoalInfoCallbacks, useVerifyContactInfoCallbacks, useVerifyContactInfo } from "../app/contextsxts";
-import { trackCustomEvent } from "../utils/event_tracking";
-import { isValidPhilippineNumber } from "../utils";
+import { ALLOWED_ANNUAL_TUITION_FEE, ALLOWED_CRITICAL_ILLNESS_BENEFIT, ALLOWED_DISABILITY_INCOME_PROTECTION, ALLOWED_DREAM_BUILDERS, ALLOWED_EDUCATION_PLANNING, ALLOWED_INCOME_PROTECTION, ALLOWED_RETIREMENT_PLANNING, AVERAGE_LIFE_SPAN_IN_YEARS, CHILD_COLLEGE_ENTRY_AGE, FBB_KEYS, INFLATION_RATE, MAX_RETIREMENT_MONTHLY_PENSION_CURRENT_SALARY_MULTIPLIER, MINIMUM_INVESTMENT_WITHDRAWAL_YEAR, MONTHS_IN_A_YEAR, OTP_LENGTH, PESO_FORMAT, PRIORITIES } from "@/constants";
+import { useContactInfo, useContactInfoCallbacks, useFreeConsultationSubmitCallback, useFreeConsultationSubmitInfoStatus, usePersonalInfo, usePersonalInfoCallbacks, usePrioritiesAndGoalInfo, usePrioritiesAndGoalInfoCallbacks, useVerifyContactInfoCallbacks, useVerifyContactInfo } from "@/contexts";
+import { trackCustomEvent } from "@/utils/event_tracking";
+import { isValidPhilippineNumber } from "@/utils";
 import Link from "next/link";
 
 const SHOW_RESULTS = false;
