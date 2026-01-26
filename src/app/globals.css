@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+:root {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Inter Variable font */
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter_variable.ttf') format('truetype');
+    font-weight: 100 900;
+    /* variable font supports a range */
+    font-style: normal;
+}
+
+/* Inter Italic */
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter_italic_variable.ttf') format('truetype');
+    font-weight: 100 900;
+    /* variable font supports a range */
+    font-style: italic;
+}
+
+/* Noto Color Emoji */
+@font-face {
+  font-family: 'Noto Color Emoji';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/l/font?kit=Yq6P-KqIXTD0t4D9z1ESnKM3-HpFabt0rjI-W293JRQW2qW44FW1EuvzWJwZMSzY9ntlm3yxxmcyWsKzYac6YFK9b-TmGjM1YobKSeMxVUfj2SX7KC4gbzq-M1w_V2aj&skey=a373f7129eaba270&v=v36) format('woff2');
+}
+
+@layer base {
+    #root {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 2rem;
+        text-align: center;
+        height: 100dvh
+    }
+
+    hr {
+        @apply border-black dark:border-white;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        border-radius: 0.5rem;
+        padding: 0em 0.25rem 0em 0.25rem;
+        @apply border-[2px] border-solid border-black dark:border-white;
+    }
+
+    input::placeholder {
+        @apply placeholder-gray-500 opacity-50;
+    }
+
+    input[readonly] {
+        opacity: 0.75;
+    }
+}
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #535bf2;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 1.5em;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 1.25em;
+    line-height: 1.1;
+}
+
+h3 {
+    font-size: 1.15em;
+    line-height: 1.1;
+}
+
+hr {
+    width: 100%;
+    color: white;
+}
+
+p {
+    text-align: justify;
+    text-indent: 1em;
+}
+
+p.error {
+    text-indent: 0;
+    text-align: left;
+    color: var(--color-red-500);
+    @apply text-xs italic;
+}
+
+ul {
+    text-align: left;
+}
+
+span.emoji {
+    font-family: 'Noto Color Emoji', system-ui, sans-serif;
+    --google-font-color-notocoloremoji:colrv1;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    border-color: white;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+button:hover {
+    border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+button > p {
+    color: #646cff;
+}
+
+button:disabled, button[disabled] > p {
+    opacity: 0.5;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0px rgba(59, 130, 246, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 12px rgba(59, 130, 246, 0.6); }
+}
+
+.animate-gentlePulse {
+  animation: gentlePulse 2s ease-in-out infinite;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #000000;
+        background-color: #ffffff;
+    }
+
+    a:hover {
+        color: #747bff;
+    }
+
+    button {
+        background-color: #f9f9f9;
+        border-color: black;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+}
