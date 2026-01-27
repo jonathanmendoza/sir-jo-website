@@ -35,7 +35,7 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         image: "/client_sessions/financial_planning_session_with_a_working_mom_of_3.png",
     },
     {
-        id: "5fd1fd0d",
+        id: "e0249205",
         emojiImg: "emoji_u1f469_200d_1f467_200d_1f466.png",
         spanEmoji: <SpanEmoji value="👩‍👧‍👦" />,
         title: "Paano Ako Natulungan ng Insurance Noon… at Bakit Kailangan Ko Na Siya Ngayon?",

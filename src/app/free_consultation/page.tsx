@@ -6,6 +6,7 @@ import HeadlineComponent from "@/components/HeadlineComponent";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useEffect, useState } from "react";
 import FreeConsultationForm from "@/components/FreeConsultationForm";
+import { FreeConsultationStateProvider } from "@/providers";
 import { PRODUCT_OFFER_ITEMS } from "@/constants";
 
 export default function FreeConsultationPage() {
@@ -38,7 +39,9 @@ export default function FreeConsultationPage() {
 
                     <hr />
                     <HeadlineComponent emojiImg="emoji_u1f9ee.png" text="Start Your Personalized Life Plan" />
-                    <FreeConsultationForm/>
+                    <FreeConsultationStateProvider>
+                        <FreeConsultationForm/>
+                    </FreeConsultationStateProvider>
                 </div>
             </ContentComponent>
         </div>
