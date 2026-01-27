@@ -14,7 +14,7 @@ function AboutMePage() {
                 <div className="flex flex-col items-stretch gap-4">
                     <hr/>
                     <HeadlineComponent emojiImg="emoji_u1f64b_200d_2642.png" text="Who is Sir Jo?" />
-                    <p>Hi! Ako si <b>Jonathan Mendoza</b>, isang licensed Financial Wealth Planner ng FWD Life Philippines.</p>
+                    <p>Hi! I’m <b>Jonathan Mendoza</b>, a licensed Financial Wealth Planner based in Metro Manila with FWD Life Philippines.</p>
                     <img src="/about_me/who_is_sir_jo.png"></img>
                     <p>Before ko pasukin ang insurance industry in 2025, I spent <b>9 years as a software engineer</b>. Fun fact: I already owned <b>8 insurance policies</b> from different companies bago ako nag-decide na sumali sa industriya mismo.</p>
 
