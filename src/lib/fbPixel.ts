@@ -40,7 +40,9 @@ export const initFacebookPixel = (email?: string, phone?: string) => {
 
 export const trackFBPageView = () => {
     if (isProduction()) {
-        import('react-facebook-pixel').then(module => module.default).then(ReactPixel => ReactPixel.pageView());
+        import('react-facebook-pixel').then(module => module.default).then(ReactPixel => {
+            ReactPixel.pageView();
+        });
     }
 };
 

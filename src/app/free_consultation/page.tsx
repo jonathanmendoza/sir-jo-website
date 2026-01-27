@@ -5,13 +5,10 @@ import ContentComponent from "@/components/ContentComponent";
 import HeadlineComponent from "@/components/HeadlineComponent";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useEffect, useState } from "react";
-import { useReadingProgress } from "@/utils/event_tracking";
 import FreeConsultationForm from "@/components/FreeConsultationForm";
 import { PRODUCT_OFFER_ITEMS } from "@/constants";
 
 export default function FreeConsultationPage() {
-    useReadingProgress();
-
     const [productOfferKey, setProductOfferKey] = useState<string|undefined>(undefined);
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);

@@ -6,13 +6,11 @@ import PagerButton from "@/components/PagerButton";
 import ScrollToTop from "@/components/ScrollToTop";
 import ArticleTitleComponent from "@/components/ArticleTitleComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import { useReadingProgress } from "@/utils/event_tracking";
 import { RELATABLE_STORIES_ITEMS } from "@/constants";
 import { useEffect, useState } from "react";
 import { RelatableStoriesItemContext } from "@/contexts";
 
 export default function Layout({children}: {children: React.ReactNode}) {
-    useReadingProgress();
     const ITEMS = RELATABLE_STORIES_ITEMS;
     const pathname = usePathname();
     const [articleIndex, setArticleIndex] = useState(ITEMS.findIndex(x => x.to === pathname));

@@ -1,17 +1,12 @@
-"use client";
-
 import ContentComponent from "@/components/ContentComponent";
 import ScrollToTop from "@/components/ScrollToTop";
 import PagerButton from "@/components/PagerButton";
 import ArticleTitleComponent from "@/components/ArticleTitleComponent";
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import { useReadingProgress } from "@/utils/event_tracking";
 import { CLIENT_SESSIONS_ITEMS } from "@/constants";
 
 function AboutMePage() {
-    useReadingProgress();
-
     return (
         <div>
             <ScrollToTop/>

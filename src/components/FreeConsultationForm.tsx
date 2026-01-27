@@ -96,6 +96,7 @@ function FreeConsultationForm() {
         onVerifyMobileClicked,
     } = useVerifyContactInfoCallbacks();
 
+    const [isPersonalInfoCompleted, setIsPersonalInfoCompleted] = useState(false);
     const personalInfoErrorsDepsList: React.DependencyList = [firstName, lastName, gender, civilStatus, age, retirementAge, hasInsurance, hasPreExistingMedicalCondition, preExistingMedicalCondition,];
     const [personalInfoErrors, setPersonalInfoErrors] = useState<{
         firstName?: string,
@@ -115,10 +116,17 @@ function FreeConsultationForm() {
                 newErrors.preExistingMedicalCondition = "Invalid pre-existing medical condition";
             }
         }
+        const prevIsCompleted = Object.values(personalInfoErrors).every((v) => !v);
+        const newIsCompleted = Object.values(newErrors).every((v) => !v);
+        if (!prevIsCompleted && newIsCompleted) {
+            trackCustomEvent("PotentialLeadProgress-Step-1-Completed");
+        }
+        setIsPersonalInfoCompleted(newIsCompleted);
         setPersonalInfoErrors(newErrors);
-    }, personalInfoErrorsDepsList);
+    }, [...personalInfoErrorsDepsList, trackCustomEvent]);
     useEffect(() => validatePersonalInfo(), [...personalInfoErrorsDepsList, validatePersonalInfo]);
 
+    const [isPrioritiesInfoCompleted, setIsPrioritiesInfoCompleted] = useState(false);
     const prioritiesErrorsDepsList: React.DependencyList = [selectedPriorities, hasInsurance, currentAnnualTuitionFee, financialBuildingBlocks[FBB_KEYS.dreamBuilders].goal, targetRetirementMonthlyPension];
     const [prioritiesInfoErrors, setPrioritiesErrors] = useState<{
         selectedPriorities?: string,
@@ -146,10 +154,17 @@ function FreeConsultationForm() {
                 newErrors.targetDreamBuildersFund = "*Please set your target dream builders";
             }
         }
+        const prevIsCompleted = Object.values(prioritiesInfoErrors).every((v) => !v);
+        const newIsCompleted = Object.values(newErrors).every((v) => !v);
+        if (!prevIsCompleted && newIsCompleted) {
+            trackCustomEvent("PotentialLeadProgress-Step-3-Completed");
+        }
+        setIsPrioritiesInfoCompleted(newIsCompleted);
         setPrioritiesErrors(newErrors);
-    }, prioritiesErrorsDepsList);
+    }, [...prioritiesErrorsDepsList, trackCustomEvent]);
     useEffect(() => validatePrioritiesInfo(), [...prioritiesErrorsDepsList, validatePrioritiesInfo]);
 
+    const [isIncomeDetailsInfoCompleted, setIsIncomeDetailsInfoCompleted] = useState(false);
     const incomeDetailsErrorsDepsList: React.DependencyList = [monthlySalary];
     const [incomeDetailsInfoErrors, setIncomeDetailsErrors] = useState<{
         monthlySalary?: string,
@@ -161,10 +176,17 @@ function FreeConsultationForm() {
         } else if (monthlySalary < 20000) {
             newErrors.monthlySalary = "*An estimated monthly income of at least ₱20,000 is recommended before getting insurance.";
         }
+        const prevIsCompleted = Object.values(incomeDetailsInfoErrors).every((v) => !v);
+        const newIsCompleted = Object.values(newErrors).every((v) => !v);
+        if (!prevIsCompleted && newIsCompleted) {
+            trackCustomEvent("PotentialLeadProgress-Step-2-Completed");
+        }
+        setIsIncomeDetailsInfoCompleted(newIsCompleted);
         setIncomeDetailsErrors(newErrors);
-    }, incomeDetailsErrorsDepsList);
+    }, [...incomeDetailsErrorsDepsList, trackCustomEvent]);
     useEffect(() => validateIncomeDetailsInfo(), [...incomeDetailsErrorsDepsList, validateIncomeDetailsInfo]);
 
+    const [isSignUpInfoCompleted, setIsSignUpInfoCompleted] = useState(false);
     const signUpInfoErrorsDepsList: React.DependencyList = [jobTitle, emailAddress, mobileNumber, bestTimeToCallYou];
     const [signUpInfoErrors, setSignUpInfoErrors] = useState<{
         emailAddress?: string,
@@ -176,49 +198,17 @@ function FreeConsultationForm() {
         if (!emailAddress.trim().includes("@")) newErrors.emailAddress = "*Invalid email address";
         if (!isValidPhilippineNumber(mobileNumber)) newErrors.mobileNumber = "*Invalid PH mobile number"
         if (!bestTimeToCallYou.trim()) newErrors.bestTimeToCallYou = "*Please let us know when is the best time";
+        const prevIsCompleted = Object.values(signUpInfoErrors).every((v) => !v);
+        const newIsCompleted = Object.values(newErrors).every((v) => !v);
+        if (!prevIsCompleted && newIsCompleted) {
+            trackCustomEvent("PotentialLeadProgress-Step-4-Completed");
+        }
+        setIsSignUpInfoCompleted(newIsCompleted);
         setSignUpInfoErrors(newErrors);
-    }, signUpInfoErrorsDepsList);
+    }, [...signUpInfoErrorsDepsList, trackCustomEvent]);
     useEffect(() => validateSignUpInfo(), [...signUpInfoErrorsDepsList, validateSignUpInfo]);
 
-    const [isPersonalInfoCompleted, setIsPersonalInfoCompleted] = useState(false);
-    useEffect(() => {
-        setIsPersonalInfoCompleted(prev => {
-            const newValue = Object.values(personalInfoErrors).every((v) => !v);
-            if (!prev && newValue) {
-                trackCustomEvent("PotentialLeadProgress-Step-1-Completed");
-            }
-            return newValue;
-        });
-    }, [personalInfoErrors, trackCustomEvent]);
-
-    const [isPrioritiesInfoCompleted, setIsPrioritiesInfoCompleted] = useState(false);
-    useEffect(() => {
-        setIsPrioritiesInfoCompleted(prev => {
-            const newValue = Object.values(prioritiesInfoErrors).every((v) => !v);
-            if (!prev && newValue) {
-                trackCustomEvent("PotentialLeadProgress-Step-3-Completed");
-            }
-            return newValue;
-        });
-    }, [prioritiesInfoErrors, trackCustomEvent]);
-
-    const [isIncomeDetailsInfoCompleted, setIsIncomeDetailsInfoCompleted] = useState(false);
-    useEffect(() => {
-        setIsIncomeDetailsInfoCompleted(prev => {
-            const newValue = Object.values(incomeDetailsInfoErrors).every((v) => !v);
-            if (!prev && newValue) {
-                trackCustomEvent("PotentialLeadProgress-Step-2-Completed");
-            }
-            return newValue;
-        });
-    }, [incomeDetailsInfoErrors, trackCustomEvent]);
-
     const shouldShowSignUpForm = isPersonalInfoCompleted && isPrioritiesInfoCompleted && isIncomeDetailsInfoCompleted;
-
-    const [isSignUpInfoCompleted, setIsSignUpInfoCompleted] = useState(false);
-    useEffect(() => {
-        setIsSignUpInfoCompleted(Object.values(signUpInfoErrors).every((v) => !v));
-    }, [signUpInfoErrors]);
 
     const { isSubmissionProcessing, isSubmitted, submissionError } = useFreeConsultationSubmitInfoStatus();
 

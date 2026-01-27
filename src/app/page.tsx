@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import BrandComponent from "@/components/BrandComponent";
 import ContentComponent from "@/components/ContentComponent";
@@ -7,12 +5,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 import CardComponent from "@/components/CardComponent";
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import { useReadingProgress } from "@/utils/event_tracking";
 import { LEARN_MORE_ITEMS, RELATABLE_STORIES_ITEMS } from "@/constants";
 
 function HomePage() {
-    useReadingProgress();
-
     return (
             <div>
                 <ScrollToTop/>

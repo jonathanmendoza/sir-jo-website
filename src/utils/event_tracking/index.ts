@@ -29,18 +29,31 @@ export function trackCustomEvent(event: string, data?: Record<string, any>) {
     trackBrevoCustomEvent(event, data);
 }
 
+export function useTrackPageView() {
+    const pathname = usePathname();
+    useEffect(() => {
+        initializeEventTracking();
+        trackPageView(pathname);
+    }, [pathname]);
+}
+
 export function useReadingProgress() {
     const pathname = usePathname();
     const [category, slug] = pathname.split("/").filter(Boolean) ?? [];
 
     const contentId = pathname;
 
-    const [scrollMilestones, setScrollMilestones] = useState({
+    const defaultScrollMilestones = {
         25: false,
         50: false,
         75: false,
         100: false,
-    });
+    };
+    const [scrollMilestones, setScrollMilestones] = useState(defaultScrollMilestones);
+
+    useEffect(() => {
+        setScrollMilestones(defaultScrollMilestones);
+    }, [pathname]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -50,7 +63,6 @@ export function useReadingProgress() {
 
             [25, 50, 75, 100].forEach((milestone) => {
                 if (scrollPercent >= milestone && !scrollMilestones[milestone as keyof typeof scrollMilestones]) {
-
                     if (category === undefined && slug === undefined) {
                         trackCustomEvent(`ViewContent-Home-[${milestone}%]`, {
                             content_id: contentId,

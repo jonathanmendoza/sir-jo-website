@@ -1,4 +1,5 @@
 import './globals.css';
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Head from 'next/head';
 import Script from 'next/script';
@@ -6,6 +7,7 @@ import Link from 'next/link';
 import { BASE_URL, DESCRIPTION, TITLE } from '@/constants';
 import FooterComponent from '@/components/FooterComponent';
 import { FreeConsultationStateProvider } from '@/providers';
+import ReadingProgressTrackingComponent from '../components/ReadingProgressTrackingComponent';
 
 export const metadata: Metadata = {
     metadataBase: new URL(`${BASE_URL}`),
@@ -47,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
             <Head>
                 {/**<!-- Meta Pixel Code -->*/}
-                <Script src="/meta_pixel_code.js" strategy="beforeInteractive" />
+                <Script src="/meta_pixel_code.js" />
                 {/**<!-- End Meta Pixel Code -->*/}
                 {/**<!-- Brevo Tracker Code -->*/}
                 <Script src="https://cdn.brevo.com/js/sdk-loader.js" strategy="lazyOnload" async />
@@ -69,6 +71,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         </nav>
                         <div className="h-8"/>
                         {children}
+                        <Suspense>
+                            <ReadingProgressTrackingComponent />
+                        </Suspense>
                         <br />
                         <FooterComponent />
                     </FreeConsultationStateProvider>
