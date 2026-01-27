@@ -56,7 +56,7 @@ function AboutMePage() {
                 </div>
             </ContentComponent>
             <div className="w-full flex flex-row justify-between py-8">
-                <PagerButton textLabel="Previous" textSubtext={<>{CLIENT_SESSIONS_ITEMS[CLIENT_SESSIONS_ITEMS.length - 1].spanEmoji}{` ${CLIENT_SESSIONS_ITEMS[CLIENT_SESSIONS_ITEMS.length - 1].title}`}</>} to={CLIENT_SESSIONS_ITEMS[CLIENT_SESSIONS_ITEMS.length - 1].to} />
+                <PagerButton textLabel="Previous" textSubtext={<>{CLIENT_SESSIONS_ITEMS[CLIENT_SESSIONS_ITEMS.length - 1].spanEmoji}{` ${CLIENT_SESSIONS_ITEMS[CLIENT_SESSIONS_ITEMS.length - 1].title}`}</>} to={`/client_sessions/${CLIENT_SESSIONS_ITEMS[CLIENT_SESSIONS_ITEMS.length - 1].id}`} />
                 <div className="animate-gentlePulse"><PagerButton textLabel="Next" textSubtext={<><SpanEmoji value="📝"/> Sign-up for a Free Consultation</>} to="/free_consultation" /></div>
             </div>
         </div>

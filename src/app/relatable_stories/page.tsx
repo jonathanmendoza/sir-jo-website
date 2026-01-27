@@ -7,7 +7,7 @@ function RelatableStoriesPage() {
         <div>
             <ContentComponent headline={<ArticleTitleComponent emojiImg="emoji_u1f4d6.png" text="Relatable Stories"/>}>
                 <div className="flex flex-col gap-6 text-xl text-left items-stretch">
-                    {RELATABLE_STORIES_ITEMS.map(item => <div key={item.to}><ArticleTitleComponent to={item.to} emojiImg={item.emojiImg} spanEmoji={item.spanEmoji} text={item.title}/></div>)}
+                    {RELATABLE_STORIES_ITEMS.map(item => <div key={item.to}><ArticleTitleComponent to={`/relatable_stories/${item.id}`} emojiImg={item.emojiImg} spanEmoji={item.spanEmoji} text={item.title}/></div>)}
                 </div>
             </ContentComponent>
         </div>

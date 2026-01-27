@@ -5,7 +5,7 @@ export type ArticleItem = {
     emojiImg?: string,
     spanEmoji: JSX.Element,
     title: string,
-    to: string,
+    to?: string,
     image: string,
 };
 
