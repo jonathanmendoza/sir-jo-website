@@ -6,18 +6,18 @@ import { BASE_URL, CLIENT_SESSIONS_ITEMS } from "@/constants";
 import { getClientSessionsArticleContentByItem } from "./lib";
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
-import { getClientSessionsArticleSlugs } from "@/utils/article_slugs";
+import { getArticleIndexBySlug, getClientSessionsArticleSlugs } from "@/utils/article_slugs";
 
 const ITEMS = CLIENT_SESSIONS_ITEMS;
 
 type Props = {
-    params: Promise<{ id: string }>
+    params: Promise<{ slug: string }>
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 export async function generateMetadata({ params }: Props, _parent: ResolvingMetadata): Promise<Metadata> {
-    const { id } = await params;
-    const articleIndex = ITEMS.findIndex(x => x.id === id || x.to?.split('/').pop() === id);
+    const { slug } = await params;
+    const articleIndex = getArticleIndexBySlug(ITEMS, slug);
     const articleItem = ITEMS[articleIndex];
 
     return articleItem !== undefined ? {
@@ -38,9 +38,9 @@ export function generateStaticParams() {
     return params;
 }
 
-export default async function RelatableStoriesArticlePage({params}: PageProps<'/relatable_stories/[id]'>) {
-    const { id } = await params;
-    const articleIndex = ITEMS.findIndex(x => x.id === id || x.to?.split('/').pop() === id);
+export default async function ClientSessionsArticlePage({params}: PageProps<'/client_sessions/[slug]'>) {
+    const { slug } = await params;
+    const articleIndex = getArticleIndexBySlug(ITEMS, slug);
     const articleItem = ITEMS[articleIndex];
     if (articleItem === undefined) {
         notFound();

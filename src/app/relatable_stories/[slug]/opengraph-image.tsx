@@ -1,10 +1,11 @@
 import { ImageResponse } from 'next/og'
 import { BASE_URL, RELATABLE_STORIES_ITEMS } from '@/constants';
+import { getArticleIndexBySlug } from '@/utils/article_slugs';
 
 const ITEMS = RELATABLE_STORIES_ITEMS;
 
 type Props = {
-    params: Promise<{ id: string }>
+    params: Promise<{ slug: string }>
 }
 
 // Image metadata
@@ -17,8 +18,8 @@ export const contentType = 'image/png'
 
 // Image generation
 export default async function Image({ params }: Props) {
-    const { id } = await params;
-    const articleIndex = ITEMS.findIndex(x => x.id === id || x.to?.split('/').pop() === id);
+    const { slug } = await params;
+    const articleIndex = getArticleIndexBySlug(ITEMS, slug);
     const articleItem = ITEMS[articleIndex];
 
     return new ImageResponse(

@@ -6,18 +6,18 @@ import { BASE_URL, LEARN_MORE_ITEMS } from "@/constants";
 import { getLearnMoreArticleContentByItem } from "./lib";
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
-import { getLearnMoreArticleSlugs } from "@/utils/article_slugs";
+import { getArticleIndexBySlug, getLearnMoreArticleSlugs } from "@/utils/article_slugs";
 
 const ITEMS = LEARN_MORE_ITEMS;
 
 type Props = {
-    params: Promise<{ id: string }>
+    params: Promise<{ slug: string }>
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 export async function generateMetadata({ params }: Props, _parent: ResolvingMetadata): Promise<Metadata> {
-    const { id } = await params;
-    const articleIndex = ITEMS.findIndex(x => x.id === id || x.to?.split('/').pop() === id);
+    const { slug } = await params;
+    const articleIndex = getArticleIndexBySlug(ITEMS, slug);
     const articleItem = ITEMS[articleIndex];
 
     return articleItem !== undefined ? {
@@ -38,10 +38,11 @@ export function generateStaticParams() {
     return params;
 }
 
-export default async function LearnMoreArticlePage({ params }: PageProps<'/learn_more/[id]'>) {
-    const { id } = await params;
-    const articleIndex = ITEMS.findIndex(x => x.id === id || x.to?.split('/').pop() === id);
+export default async function LearnMoreArticlePage({ params }: PageProps<'/learn_more/[slug]'>) {
+    const { slug } = await params;
+    const articleIndex = getArticleIndexBySlug(ITEMS, slug);
     const articleItem = ITEMS[articleIndex];
+    
     if (articleItem === undefined) {
         notFound();
     }

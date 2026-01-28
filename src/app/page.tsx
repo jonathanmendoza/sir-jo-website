@@ -28,13 +28,13 @@ function HomePage() {
                         <hr/>
                         <HeadlineComponent emojiImg="emoji_u2753.png" text="Why Insurance Matters"/>
                         <div className="max-w-[85dvw] lg:max-w-[1280px] overflow-x-auto flex snap-x snap-mandatory space-x-4 p-4">
-                            {LEARN_MORE_ITEMS.slice(0, LEARN_MORE_ITEMS.length - 2).map(item => <CardComponent key={item.to} isSquare title={<>{item.spanEmoji}{` ${item.title}`}</>} image={item.image} ctaText={<><SpanEmoji value="👉"/> Tap to learn more <SpanEmoji value="📘"/></>} to={`/learn_more/${item.id}`}/>)}
+                            {LEARN_MORE_ITEMS.slice(0, LEARN_MORE_ITEMS.length - 2).map(item => <CardComponent key={item.id} isSquare title={<>{item.spanEmoji}{` ${item.title}`}</>} image={item.image} ctaText={<><SpanEmoji value="👉"/> Tap to learn more <SpanEmoji value="📘"/></>} to={`/learn_more/${item.id}`}/>)}
                         </div>
 
                         <hr/>
                         <HeadlineComponent emojiImg="emoji_u1f4d6.png" text="Why our clients chose to get covered."/>
                         <div className="max-w-[85dvw] lg:max-w-[1280px] overflow-x-auto flex snap-x snap-mandatory space-x-4 p-4">
-                            {[...RELATABLE_STORIES_ITEMS].map(item => <CardComponent key={item.to} isSquare title={<>{item.spanEmoji}{` ${item.title}`}</>} body={item.hook} image={item.image} ctaText={<><SpanEmoji value="👉"/> Tap to read more <SpanEmoji value="&#x1F4D6;"/></>} to={`/relatable_stories/${item.id}`}/>)}
+                            {[...RELATABLE_STORIES_ITEMS].map(item => <CardComponent key={item.id} isSquare title={<>{item.spanEmoji}{` ${item.title}`}</>} body={item.hook} image={item.image} ctaText={<><SpanEmoji value="👉"/> Tap to read more <SpanEmoji value="&#x1F4D6;"/></>} to={`/relatable_stories/${item.id}`}/>)}
                         </div>
 
                         <hr/>

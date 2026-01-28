@@ -69,7 +69,7 @@ export function useReadingProgress() {
                             progress: milestone,
                         });
                     } else if (category === 'learn_more' && slug !== undefined) {
-                        const match = LEARN_MORE_ITEMS.find(item => item.to === pathname);
+                        const match = LEARN_MORE_ITEMS.find(item => pathname === `/learn_more/${item.id}` || (item.to && pathname === `/learn_more/${item.to}`));
                         if (match) {
                             trackCustomEvent(`ViewContent-LearnMore-[${match.id}]-[${milestone}%]`, {
                                 content_id: contentId,
@@ -81,7 +81,7 @@ export function useReadingProgress() {
                             progress: milestone,
                         });
                     } else if (category === 'relatable_stories' && slug !== undefined) {
-                        const match = RELATABLE_STORIES_ITEMS.find(item => item.to === pathname);
+                        const match = RELATABLE_STORIES_ITEMS.find(item => pathname === `/relatable_stories/${item.id}` || (item.to && pathname === `/relatable_stories/${item.to}`));
                         if (match) {
                             trackCustomEvent(`ViewContent-RelatableStories-[${match.id}]-[${milestone}%]`, {
                                 content_id: contentId,
@@ -93,7 +93,7 @@ export function useReadingProgress() {
                             progress: milestone,
                         });
                     } else if (category === 'client_sessions' && slug !== undefined) {
-                        const match = CLIENT_SESSIONS_ITEMS.find(item => item.to === pathname);
+                        const match = CLIENT_SESSIONS_ITEMS.find(item => pathname === `/client_sessions/${item.id}` || (item.to && pathname === `/client_sessions/${item.to}`));
                         if (match) {
                             trackCustomEvent(`ViewContent-ClientSessions-[${match.id}]-[${milestone}%]`, {
                                 content_id: contentId,
