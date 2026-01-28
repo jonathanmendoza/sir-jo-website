@@ -1,10 +1,17 @@
+import type { Metadata } from 'next';
 import ContentComponent from "@/components/ContentComponent";
 import ScrollToTop from "@/components/ScrollToTop";
 import PagerButton from "@/components/PagerButton";
 import ArticleTitleComponent from "@/components/ArticleTitleComponent";
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import { CLIENT_SESSIONS_ITEMS, MY_FULL_NAME } from "@/constants";
+import { BASE_URL, CLIENT_SESSIONS_ITEMS, MY_FULL_NAME } from "@/constants";
+
+export const metadata: Metadata = {
+    twitter: {
+        images: [`${BASE_URL}/about_me/who_is_sir_jo.png`]
+    }
+}
 
 function AboutMePage() {
     return (
