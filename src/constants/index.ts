@@ -7,7 +7,7 @@ import type { Priority } from "@/types"
 
 export const BASE_URL = "https://fwdjonathanmendoza.com";
 export const TITLE = "Sir Jo, Your Life Partner";
-export const DESCRIPTION = "Hi! I'm Jonathan Mendoza, a licensed Financial Wealth Planner from FWD Life Philippines. I help professionals and families create personalized protection and investment plans.";
+export const DESCRIPTION = "Hi! I'm Jonathan Mendoza, a licensed Financial Wealth Planner based in Metro Manila with FWD Life Philippines. I help professionals and families create personalized protection and investment plans.";
 export const INSURANCE_COMPANY = "FWD Insurance";
 
 export const LEAD_ID_STORAGE_KEY = "SIR_JO_LEAD_ID";

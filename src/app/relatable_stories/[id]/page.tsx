@@ -2,10 +2,34 @@ import SpanEmoji from "@/components/SpanEmoji";
 import ContentComponent from "@/components/ContentComponent";
 import ArticleTitleComponent from "@/components/ArticleTitleComponent";
 import PagerButton from "@/components/PagerButton";
-import { RELATABLE_STORIES_ITEMS } from "@/constants";
+import { BASE_URL, RELATABLE_STORIES_ITEMS } from "@/constants";
 import { getRelatableStoriesArticleContentByItem } from "./lib";
+import type { Metadata, ResolvingMetadata } from "next";
 
 const ITEMS = RELATABLE_STORIES_ITEMS;
+
+type Props = {
+    params: Promise<{ id: string }>
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export async function generateMetadata({ params }: Props, _parent: ResolvingMetadata): Promise<Metadata> {
+    const { id } = await params;
+    const articleIndex = ITEMS.findIndex(x => x.id === id || x.to?.split('/').pop() === id);
+    const articleItem = ITEMS[articleIndex];
+
+    return {
+        openGraph: {
+            title: articleItem.title,
+            images: {
+                url: `${BASE_URL}${articleItem.image}`,
+                width: 1080,
+                height: 1080,
+
+            }
+        }
+    }
+}
 
 export function generateStaticParams() {
     const articleIds = ITEMS.map(item => ({
