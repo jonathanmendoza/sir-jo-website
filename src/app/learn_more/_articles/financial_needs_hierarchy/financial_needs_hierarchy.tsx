@@ -79,7 +79,6 @@ function FinancialNeedsHierarchy({articleItem}: {articleItem: ArticleItem}) {
         }
         initializeEventTracking(emailAddress);
         try {
-            console.log(process.env.NEXT_PUBLIC_API_URL);
             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/leads/financial-needs-hierarchy`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
