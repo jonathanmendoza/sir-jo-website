@@ -6,6 +6,7 @@ import { BASE_URL, LEARN_MORE_ITEMS } from "@/constants";
 import { getLearnMoreArticleContentByItem } from "./lib";
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
+import { getLearnMoreArticleSlugs } from "@/utils/article_slugs";
 
 const ITEMS = LEARN_MORE_ITEMS;
 
@@ -33,13 +34,8 @@ export async function generateMetadata({ params }: Props, _parent: ResolvingMeta
 }
 
 export function generateStaticParams() {
-    const articleIds = ITEMS.map(item => ({
-        id: item.id
-    }));
-    const articleSlugs = ITEMS.filter(item => item.to !== undefined).map(item => ({
-        id: item.to?.split('/').pop()
-    }));
-    return [...articleIds, ...articleSlugs];
+    const params = getLearnMoreArticleSlugs().map(slug => ({id: slug}));
+    return params;
 }
 
 export default async function LearnMoreArticlePage({ params }: PageProps<'/learn_more/[id]'>) {

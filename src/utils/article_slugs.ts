@@ -1,7 +1,7 @@
 import { CLIENT_SESSIONS_ITEMS, LEARN_MORE_ITEMS, RELATABLE_STORIES_ITEMS } from "@/constants";
 import { ArticleItem } from "@/types";
 
-const getArticleSlugs = (articleItems: ArticleItem[]) => {
+const getArticleSlugs = (articleItems: ArticleItem[]): string[] => {
     return [...articleItems.map(item => item.id), ...articleItems.filter(item => item.to !== undefined).map(item => item.to?.split('/').pop() ?? '')];
 }
 
