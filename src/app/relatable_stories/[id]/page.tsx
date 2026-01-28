@@ -19,17 +19,23 @@ export async function generateMetadata({ params }: Props, _parent: ResolvingMeta
     const articleIndex = ITEMS.findIndex(x => x.id === id || x.to?.split('/').pop() === id);
     const articleItem = ITEMS[articleIndex];
 
-    return {
-        openGraph: articleItem !== undefined ? {
+    return articleItem !== undefined ? {
+        openGraph: {
             title: articleItem.title,
+            description: articleItem.hook,
             images: {
                 url: `${BASE_URL}${articleItem.image}`,
                 width: 1080,
                 height: 1080,
 
             }
-        } : {}
-    }
+        },
+        twitter: {
+            title: articleItem.title,
+            description: articleItem.hook,
+            images: `${BASE_URL}${articleItem.image}`
+        }
+    } : {}
 }
 
 export function generateStaticParams() {

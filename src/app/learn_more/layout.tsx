@@ -5,6 +5,9 @@ export const metadata: Metadata = {
     title: "Learn More",
     openGraph: {
         title: `Learn More | ${TITLE}`
+    },
+    twitter: {
+        title: `Learn More | ${TITLE}`
     }
 }
 

@@ -8,7 +8,8 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         spanEmoji: <SpanEmoji value="👩‍👧" />,
         title: "A Breadwinner Mom’s Biggest Worry",
         to: "/client_sessions/financial_planning_session_with_a_breadwinner_mom_of_a_3_year_old_child",
-        image: "/client_sessions/financial_planning_session_with_a_breadwinner_mom_of_a_3_year_old_child.png"
+        image: "/client_sessions/financial_planning_session_with_a_breadwinner_mom_of_a_3_year_old_child.png",
+        hook: "Today, I had the privilege of talking to a strong breadwinner mom. 💪 She’s raising a 3-year-old child on her own, and she opened up about one of her biggest fears:"
     },
     {
         id: "8d2d226d",
@@ -17,6 +18,7 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         title: "Kwento ng Isang Working Dad",
         to: "/client_sessions/financial_planning_session_with_a_working_dad",
         image: "/client_sessions/financial_planning_session_with_a_working_dad.png",
+        hook: "Kakatapos lang namin ng financial planning session with a hardworking dad 🧡. Sabi niya, isa sa biggest worries niya:"
     },
     {
         id: "08bcb833",
@@ -25,6 +27,7 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         title: "Kwento ng Isang Hardworking Gen Z",
         to: "/client_sessions/financial_planning_session_with_a_hardworking_gen_z",
         image: "/client_sessions/financial_planning_session_with_a_hardworking_gen_z.png",
+        hook: "Kakatapos lang namin ng financial planning session with a hardworking Gen Z. 🌟 Shinare niya yung isa sa biggest worries niya:"
     },
     {
         id: "5fd1fd0d",
@@ -33,6 +36,7 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         title: "Kwento ng Isang Working Mom of 3 🧡",
         to: "/client_sessions/financial_planning_session_with_a_working_mom_of_3",
         image: "/client_sessions/financial_planning_session_with_a_working_mom_of_3.png",
+        hook: "Kakatapos lang ng financial wealth planning session with a hardworking Working Mom of 3."
     },
     {
         id: "e0249205",
@@ -41,6 +45,7 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         title: "Paano Ako Natulungan ng Insurance Noon… at Bakit Kailangan Ko Na Siya Ngayon?",
         to: "/client_sessions/financial_planning_session_with_a_mompreneur",
         image: "/client_sessions/financial_planning_session_with_a_mompreneur.png",
+        hook: "Kwento ng isang Mompreneur na Condo Rental Owner"
     },
     {
         id: "6f743c75",
@@ -49,5 +54,6 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         title: "The Nurse Who Protected Her Family Before Anything Else",
         to: "/client_sessions/financial_planning_session_with_a_breadwinner_nurse",
         image: "/client_sessions/financial_planning_session_with_a_breadwinner_nurse.png",
+        hook: "A Breadwinner’s Journey to Complete Financial Protection"
     },
 ]

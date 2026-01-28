@@ -9,10 +9,14 @@ export type ArticleItem = {
     image: string,
 };
 
-export type LearnMoreItem = ArticleItem
+export type LearnMoreItem = ArticleItem & {
+    hook: string,
+}
 
 export type RelatableStoriesItem = ArticleItem & {
     hook: string,
 };
 
-export type ClientSessionsItem = ArticleItem;
+export type ClientSessionsItem = ArticleItem & {
+    hook: string,
+}
