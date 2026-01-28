@@ -23,12 +23,6 @@ export async function generateMetadata({ params }: Props, _parent: ResolvingMeta
         openGraph: {
             title: articleItem.title,
             description: articleItem.hook,
-            images: {
-                url: `${BASE_URL}${articleItem.image}`,
-                width: 1080,
-                height: 1080,
-
-            }
         },
         twitter: {
             title: articleItem.title,
