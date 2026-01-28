@@ -6,9 +6,13 @@ export * from './product-offer-items';
 import type { Priority } from "@/types"
 
 export const BASE_URL = "https://fwdjonathanmendoza.com";
+export const MY_FULL_NAME = "Jonathan Ventula Mendoza"
+export const MY_NAME = "Jonathan Mendoza"
 export const TITLE = "Sir Jo, Your Life Partner";
-export const DESCRIPTION = "Hi! I'm Jonathan Mendoza, a licensed Financial Wealth Planner based in Metro Manila with FWD Life Philippines. I help professionals and families create personalized protection and investment plans.";
+export const DESCRIPTION = `Hi! I'm ${MY_FULL_NAME}, a licensed Financial Wealth Planner based in Metro Manila with FWD Life Philippines. I help professionals and families create personalized protection and investment plans.`;
 export const INSURANCE_COMPANY = "FWD Insurance";
+export const PRIVACY_POLICY_EMAIL_ADDRESS = "sirjo@fwdjonathanmendoza.com";
+export const CONTACT_NUMBER = "+63 907 641 4380";
 
 export const LEAD_ID_STORAGE_KEY = "SIR_JO_LEAD_ID";
 export const PERSONAL_INFO_STORAGE_KEY = "SIR_JO_PERSONAL_INFO";

@@ -3,7 +3,7 @@
 import HeadlineComponent from "./HeadlineComponent";
 import SpanEmoji from "./SpanEmoji";
 import { useCallback, useEffect, useState } from "react";
-import { ALLOWED_ANNUAL_TUITION_FEE, ALLOWED_CRITICAL_ILLNESS_BENEFIT, ALLOWED_DISABILITY_INCOME_PROTECTION, ALLOWED_DREAM_BUILDERS, ALLOWED_EDUCATION_PLANNING, ALLOWED_INCOME_PROTECTION, ALLOWED_RETIREMENT_PLANNING, AVERAGE_LIFE_SPAN_IN_YEARS, CHILD_COLLEGE_ENTRY_AGE, FBB_KEYS, INFLATION_RATE, MAX_RETIREMENT_MONTHLY_PENSION_CURRENT_SALARY_MULTIPLIER, MINIMUM_INVESTMENT_WITHDRAWAL_YEAR, MONTHS_IN_A_YEAR, OTP_LENGTH, PESO_FORMAT, PRIORITIES } from "@/constants";
+import { ALLOWED_ANNUAL_TUITION_FEE, ALLOWED_CRITICAL_ILLNESS_BENEFIT, ALLOWED_DISABILITY_INCOME_PROTECTION, ALLOWED_DREAM_BUILDERS, ALLOWED_EDUCATION_PLANNING, ALLOWED_INCOME_PROTECTION, ALLOWED_RETIREMENT_PLANNING, AVERAGE_LIFE_SPAN_IN_YEARS, CHILD_COLLEGE_ENTRY_AGE, FBB_KEYS, INFLATION_RATE, MAX_RETIREMENT_MONTHLY_PENSION_CURRENT_SALARY_MULTIPLIER, MINIMUM_INVESTMENT_WITHDRAWAL_YEAR, MONTHS_IN_A_YEAR, MY_FULL_NAME, OTP_LENGTH, PESO_FORMAT, PRIORITIES } from "@/constants";
 import { useContactInfo, useContactInfoCallbacks, useFreeConsultationSubmitCallback, useFreeConsultationSubmitInfoStatus, usePersonalInfo, usePersonalInfoCallbacks, usePrioritiesAndGoalInfo, usePrioritiesAndGoalInfoCallbacks, useVerifyContactInfoCallbacks, useVerifyContactInfo } from "@/contexts";
 import { trackCustomEvent } from "@/utils/event_tracking";
 import { isValidPhilippineNumber } from "@/utils";
@@ -467,9 +467,9 @@ function FreeConsultationForm() {
                     {isSubmitted && emailStatus == 'verified' && mobileStatus == 'verified' && <p className=""><SpanEmoji value="&#x2705;&#xFE0F;" /> Successfully Submitted</p>}
 
                 </div>
-                {!isSubmitted && <p className="italic">Tap submit to receive your personalized plan and get connected with <b>Jonathan Mendoza</b> — your Financial Wealth Planner who will guide you toward your goals.</p>}
+                {!isSubmitted && <p className="italic">Tap submit to receive your personalized plan and get connected with <b>{`${MY_FULL_NAME}`}</b> — your Financial Wealth Planner who will guide you toward your goals.</p>}
                 {!isSubmitted && <p className="italic">By submitting this form, you agree to our <Link target="_blank" href="/privacy_policy">Privacy Policy</Link></p>}
-                {isSubmitted && <p className="italic">You will receive your personalized plan and get connected with <b>Jonathan Mendoza</b> — your Financial Wealth Planner who will guide you toward your goals.</p>}
+                {isSubmitted && <p className="italic">You will receive your personalized plan and get connected with <b>{`${MY_FULL_NAME}`}</b> — your Financial Wealth Planner who will guide you toward your goals.</p>}
             </>}
 
             {SHOW_RESULTS && <>

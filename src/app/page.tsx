@@ -5,7 +5,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import CardComponent from "@/components/CardComponent";
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import { LEARN_MORE_ITEMS, RELATABLE_STORIES_ITEMS } from "@/constants";
+import { LEARN_MORE_ITEMS, MY_FULL_NAME, RELATABLE_STORIES_ITEMS } from "@/constants";
 
 function HomePage() {
     return (
@@ -19,7 +19,7 @@ function HomePage() {
                     <div className="flex flex-col items-stretch gap-4">
                         <hr/>
                         <BrandComponent height="2rem"/>
-                        <p>Hi! I’m <b>Jonathan Mendoza</b>, a licensed Financial Wealth Planner based in Metro Manila with FWD Life Philippines. I help professionals and families create personalized protection and investment plans.</p>
+                        <p>Hi! I’m <b>{`${MY_FULL_NAME}`}</b>, a licensed Financial Wealth Planner based in Metro Manila with FWD Life Philippines. I help professionals and families create personalized protection and investment plans.</p>
                         <Link href="/about_me" className="flex flex-col items-stretch"><img src="/about_me/who_is_sir_jo.png"/></Link>
                         <div className="w-full flex flex-col justify-center items-center animate-gentlePulse">
                             <Link href="/about_me"><SpanEmoji value="👉" /> Tap here to learn more about me <SpanEmoji value="&#x1F464;"/></Link>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HeadlineComponent from "./HeadlineComponent";
 import SpanEmoji from "./SpanEmoji";
+import { CONTACT_NUMBER, MY_FULL_NAME, MY_NAME } from "@/constants";
 
 function FooterComponent() {
     return (
@@ -9,7 +10,7 @@ function FooterComponent() {
                 <hr/>
                 <HeadlineComponent emojiImg="emoji_u1f44b.png" text="About the Author"/>
                 <div>
-                    <p style={{textIndent: '0'}} className="font-bold">Jonathan Mendoza</p>
+                    <p style={{textIndent: '0'}} className="font-bold">{`${MY_FULL_NAME}`}</p>
                     <p style={{textIndent: '0'}}><SpanEmoji value="💼"/> Licensed FWD Financial Wealth Planner</p>
                 </div>
                 <p>Helping Filipinos build a secure and confident financial future — one plan at a time.</p>
@@ -24,7 +25,7 @@ function FooterComponent() {
                         </div>
                         <p style={{textIndent: '0', textAlign: 'left'}} className="font-bold text-xl">Sir Jo, Your Life Partner</p>
                     </div>
-                    <p style={{textIndent: '0', textAlign: 'right'}} className="row-start-5 col-start-3 col-span-3 text-xs">Jonathan Mendoza</p>
+                    <p style={{textIndent: '0', textAlign: 'right'}} className="row-start-5 col-start-3 col-span-3 text-xs">{`${MY_NAME}`}</p>
                     <p style={{textIndent: '0', textAlign: 'right'}} className="row-start-6 col-start-3 col-span-3 text-xs italic">Financial Wealth Planner</p>
                     <div className="row-start-5 col-start-1 col-span-2 flex flex-row justify-start items-stretch gap-1">
                         <img src="/icons/facebook_icon.png" className="aspect-square h-full"/>
@@ -32,7 +33,7 @@ function FooterComponent() {
                     </div>
                     <div className="row-start-6 col-start-1 col-span-2 flex flex-row justify-start items-stretch gap-1">
                         <img src="/icons/phone_icon.png" className="aspect-square h-full"/>
-                        <p style={{textIndent: '0'}} className="text-xs">+63 907 641 4380</p>
+                        <p style={{textIndent: '0'}} className="text-xs">{`${CONTACT_NUMBER}`}</p>
                     </div>
                 </div>
                 <hr/>

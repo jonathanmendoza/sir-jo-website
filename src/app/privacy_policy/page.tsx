@@ -3,6 +3,7 @@ import ContentComponent from "@/components/ContentComponent";
 import PagerButton from "@/components/PagerButton";
 import ScrollToTop from "@/components/ScrollToTop";
 import SpanEmoji from "@/components/SpanEmoji";
+import { BASE_URL, MY_FULL_NAME, PRIVACY_POLICY_EMAIL_ADDRESS } from "@/constants";
 
 function PrivacyPolicy() {
     return (
@@ -16,8 +17,8 @@ function PrivacyPolicy() {
                 <div className="flex flex-col items-stretch gap-4">
                     <div>
                         <p style={{ textIndent: '0' }}><b>Effective Date:</b> October 25, 2025</p>
-                        <p style={{ textIndent: '0' }}><b>Website:</b> <a className="text-xs" href="https://fwdjonathanmendoza.com">https://fwdjonathanmendoza.com</a></p>
-                        <p style={{ textIndent: '0' }}><b>Owner:</b> Jonathan Mendoza</p>
+                        <p style={{ textIndent: '0' }}><b>Website:</b> <a className="text-xs" href={`${BASE_URL}`}>{`${BASE_URL}`}</a></p>
+                        <p style={{ textIndent: '0' }}><b>Owner:</b>{` ${MY_FULL_NAME}`}</p>
                     </div>
 
                     <hr />
@@ -109,7 +110,7 @@ function PrivacyPolicy() {
                         <li>Withdraw consent from receiving marketing messages</li>
                         <li>Request deletion of your personal data (subject to legal retention requirements)</li>
                     </ul>
-                    <p style={{ textIndent: '0', textAlign: 'left' }}>To exercise these rights, please contact us at <a href="mailto:sirjo@fwdjonathanmendoza.com">sirjo@fwdjonathanmendoza.com</a>.</p>
+                    <p style={{ textIndent: '0', textAlign: 'left' }}>To exercise these rights, please contact us at <a href={`mailto:${PRIVACY_POLICY_EMAIL_ADDRESS}`}>{`${PRIVACY_POLICY_EMAIL_ADDRESS}`}</a>.</p>
 
                     <hr />
                     <h2 className="text-left"><b>8. Data Retention</b></h2>
@@ -124,9 +125,9 @@ function PrivacyPolicy() {
                     <h2 className="text-left"><b>10. Contact Us</b></h2>
                     <p>If you have any questions about this Privacy Policy or how we handle your personal data, please contact:</p>
                     <div>
-                        <p style={{ textIndent: '0', textAlign: 'left' }}><b>Jonathan Mendoza</b></p>
-                        <p style={{ textIndent: '0', textAlign: 'left' }}><SpanEmoji value="📧"/> Email: <a href="mailto:sirjo@fwdjonathanmendoza.com">sirjo@fwdjonathanmendoza.com</a></p>
-                        <p style={{ textIndent: '0', textAlign: 'left' }}><SpanEmoji value="🌏"/> Website: <a className="text-[0.85em]" href="https://fwdjonathanmendoza.com">https://fwdjonathanmendoza.com</a></p>
+                        <p style={{ textIndent: '0', textAlign: 'left' }}><b>{`${MY_FULL_NAME}`}</b></p>
+                        <p style={{ textIndent: '0', textAlign: 'left' }}><SpanEmoji value="📧"/> Email: <a href={`mailto:${PRIVACY_POLICY_EMAIL_ADDRESS}`}>{`${PRIVACY_POLICY_EMAIL_ADDRESS}`}</a></p>
+                        <p style={{ textIndent: '0', textAlign: 'left' }}><SpanEmoji value="🌏"/> Website: <a className="text-[0.85em]" href={`${BASE_URL}`}>{`${BASE_URL}`}</a></p>
                     </div>
                 </div>
             </ContentComponent>
