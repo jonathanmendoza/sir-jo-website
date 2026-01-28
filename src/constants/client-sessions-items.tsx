@@ -7,7 +7,7 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         emojiImg: "emoji_u1f469.png",
         spanEmoji: <SpanEmoji value="👩‍👧" />,
         title: "A Breadwinner Mom’s Biggest Worry",
-        to: "financial_planning_session_with_a_breadwinner_mom_of_a_3_year_old_child",
+        slug: "financial_planning_session_with_a_breadwinner_mom_of_a_3_year_old_child",
         image: "/client_sessions/financial_planning_session_with_a_breadwinner_mom_of_a_3_year_old_child.png",
         hook: "Today, I had the privilege of talking to a strong breadwinner mom. 💪 She’s raising a 3-year-old child on her own, and she opened up about one of her biggest fears:"
     },
@@ -16,7 +16,7 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         emojiImg: "emoji_u1f468.png",
         spanEmoji: <SpanEmoji value="👨‍👩‍👦" />,
         title: "Kwento ng Isang Working Dad",
-        to: "financial_planning_session_with_a_working_dad",
+        slug: "financial_planning_session_with_a_working_dad",
         image: "/client_sessions/financial_planning_session_with_a_working_dad.png",
         hook: "Kakatapos lang namin ng financial planning session with a hardworking dad 🧡. Sabi niya, isa sa biggest worries niya:"
     },
@@ -25,7 +25,7 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         emojiImg: "emoji_u1f469_200d_1f4bb.png",
         spanEmoji: <SpanEmoji value="👩‍💻" />,
         title: "Kwento ng Isang Hardworking Gen Z",
-        to: "financial_planning_session_with_a_hardworking_gen_z",
+        slug: "financial_planning_session_with_a_hardworking_gen_z",
         image: "/client_sessions/financial_planning_session_with_a_hardworking_gen_z.png",
         hook: "Kakatapos lang namin ng financial planning session with a hardworking Gen Z. 🌟 Shinare niya yung isa sa biggest worries niya:"
     },
@@ -34,7 +34,7 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         emojiImg: "emoji_u1f469_200d_1f467_200d_1f466.png",
         spanEmoji: <SpanEmoji value="👩‍👧‍👦" />,
         title: "Kwento ng Isang Working Mom of 3 🧡",
-        to: "financial_planning_session_with_a_working_mom_of_3",
+        slug: "financial_planning_session_with_a_working_mom_of_3",
         image: "/client_sessions/financial_planning_session_with_a_working_mom_of_3.png",
         hook: "Kakatapos lang ng financial wealth planning session with a hardworking Working Mom of 3."
     },
@@ -43,7 +43,7 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         emojiImg: "emoji_u1f469_200d_1f467_200d_1f466.png",
         spanEmoji: <SpanEmoji value="👩‍👧‍👦" />,
         title: "Paano Ako Natulungan ng Insurance Noon… at Bakit Kailangan Ko Na Siya Ngayon?",
-        to: "financial_planning_session_with_a_mompreneur",
+        slug: "financial_planning_session_with_a_mompreneur",
         image: "/client_sessions/financial_planning_session_with_a_mompreneur.png",
         hook: "Kwento ng isang Mompreneur na Condo Rental Owner"
     },
@@ -52,7 +52,7 @@ export const CLIENT_SESSIONS_ITEMS: ClientSessionsItem[] = [
         emojiImg: "emoji_u1f469_200d_2695.png",
         spanEmoji: <SpanEmoji value="&#x1F469;&#x200D;&#x2695;&#xFE0F;" />,
         title: "The Nurse Who Protected Her Family Before Anything Else",
-        to: "financial_planning_session_with_a_breadwinner_nurse",
+        slug: "financial_planning_session_with_a_breadwinner_nurse",
         image: "/client_sessions/financial_planning_session_with_a_breadwinner_nurse.png",
         hook: "A Breadwinner’s Journey to Complete Financial Protection"
     },

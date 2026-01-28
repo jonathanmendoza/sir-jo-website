@@ -2,7 +2,7 @@ import { CLIENT_SESSIONS_ITEMS, LEARN_MORE_ITEMS, RELATABLE_STORIES_ITEMS } from
 import { ArticleItem } from "@/types";
 
 const getArticleSlugs = (articleItems: ArticleItem[]): string[] => {
-    return [...articleItems.map(item => item.id), ...articleItems.filter(item => item.to !== undefined).map(item => item.to ?? '')];
+    return [...articleItems.map(item => item.id), ...articleItems.filter(item => item.slug !== undefined).map(item => item.slug ?? '')];
 }
 
 export function getLearnMoreArticleSlugs() {
@@ -18,5 +18,5 @@ export function getClientSessionsArticleSlugs() {
 }
 
 export function getArticleIndexBySlug(articleItems: ArticleItem[], slug: string) {
-    return articleItems.findIndex(x => x.id === slug || (x.to && x.to === slug));
+    return articleItems.findIndex(x => x.id === slug || (x.slug && x.slug === slug));
 }
