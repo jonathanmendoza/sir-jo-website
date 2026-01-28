@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function ADadsGreatestFearIsntFailingAtWorkItsFailingToSecureHisChildrensFuture({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -62,11 +60,7 @@ function ADadsGreatestFearIsntFailingAtWorkItsFailingToSecureHisChildrensFuture(
                 <p style={{ textIndent: '0' }}><b><SpanEmoji value="&#x1F4DD;"/> Sign-up for a free consultation</b> with me today.
                     Let’s make sure na secured din ang future ng pamilya mo. 🚀</p>
             </div>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr />
 
         </div>

@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function TheSmartestWayToPassOnWealth({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -80,11 +78,7 @@ function TheSmartestWayToPassOnWealth({articleItem}: {articleItem: ArticleItem})
             <HeadlineComponent emojiImg="emoji_u1f331.png" text="Plan your legacy the smart way" />
             <p>If you want your hard-earned wealth to go to the right people — <i>the way you want it to</i>, then it’s time to start planning your legacy today.</p>
             <p>Let’s talk about how you can use insurance not just for protection, but for <b>peaceful, tax-free wealth transfer.</b></p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr />
 
         </div>

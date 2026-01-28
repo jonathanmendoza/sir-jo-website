@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function WhyHavingPhilhealthIsntEnoughYouStillNeedCriticalIllnessInsurance({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -109,11 +107,7 @@ function WhyHavingPhilhealthIsntEnoughYouStillNeedCriticalIllnessInsurance({arti
                 <p style={{textIndent: '0'}}><b>it’s about protecting your life and your family’s peace of mind.</b></p>
             </div>
             <p ><SpanEmoji value="📩" /> Sign-up for a free consultation today and let’s secure your health before life catches you off guard.</p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr />
 
         </div>

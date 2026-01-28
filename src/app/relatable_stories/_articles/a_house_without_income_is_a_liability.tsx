@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function AHouseWithoutIncomeIsALiability({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -48,11 +46,7 @@ function AHouseWithoutIncomeIsALiability({articleItem}: {articleItem: ArticleIte
                 <p>Huwag hayaang maging liability ang pinakaimportanteng investment ng pamilya mo.</p>
                 <p style={{textIndent: '0'}}><b><SpanEmoji value="&#x1F4DD;"/> Sign-up for a free consultation</b> with me today, at pag-usapan natin kung paano mo mapoprotektahan ang income at tahanan mo.</p>
             </div>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

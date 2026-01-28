@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function TheStoryOfATeacherWhoChoseToPrepareEarly({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -74,11 +72,7 @@ function TheStoryOfATeacherWhoChoseToPrepareEarly({articleItem}: {articleItem: A
             <div>
                 <p style={{textIndent: '0', textAlign: 'left'}}><b><SpanEmoji value="&#x1F4DD;"/> Sign-up for a FREE consultation</b> to learn how Critical Illness Insurance can give you the security and peace of mind you deserve.</p>
             </div>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

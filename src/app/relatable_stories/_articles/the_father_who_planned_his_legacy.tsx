@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function TheFatherWhoPlannedHisLegacy({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -78,11 +76,7 @@ function TheFatherWhoPlannedHisLegacy({articleItem}: {articleItem: ArticleItem})
                 <p style={{textIndent: '0', textAlign: 'left'}}><b><SpanEmoji value="&#x1F4DD;"/> Sign-up for a FREE consultation</b></p>
                 <p>Let’s talk about how you can create your own <i>“Mang Ramon Plan”</i> — a legacy that gives, protects, and lasts for generations.</p>
             </div>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

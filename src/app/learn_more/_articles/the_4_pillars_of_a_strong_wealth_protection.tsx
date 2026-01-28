@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function The4PillarsOfAStrongWealthProtection({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -35,11 +33,7 @@ function The4PillarsOfAStrongWealthProtection({articleItem}: {articleItem: Artic
             <hr/>
             <HeadlineComponent emojiImg="emoji_u1f4c5.png" text="Take the Next Step"/>
             <p><SpanEmoji value="&#x1F4DD;"/> If you don’t have all these pillars yet, I can help you start building them today.</p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

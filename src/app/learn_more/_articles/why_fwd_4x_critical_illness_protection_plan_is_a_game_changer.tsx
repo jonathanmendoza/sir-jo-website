@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function WhyFWD4xCriticalIllnessProtectionPlanIsAGameChanger({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -78,11 +76,7 @@ function WhyFWD4xCriticalIllnessProtectionPlanIsAGameChanger({articleItem}: {art
             <HeadlineComponent emojiImg="emoji_u1f331.png" text="Start protecting your future — 4x stronger" />
             <p>Ready to know how much protection you can get (and how affordable it can be)?</p>
             <p>Let’s create a plan that fits your life, your budget, and your dreams.</p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
 
             <hr />
 

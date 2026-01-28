@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function FinancialPlanningSessionWithAWorkingMomOf3({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -32,11 +30,7 @@ function FinancialPlanningSessionWithAWorkingMomOf3({articleItem}: {articleItem:
             <hr/>
             <HeadlineComponent emojiImg="emoji_u1f4e9.png" text="Your Turn" />
             <p><SpanEmoji value="&#x1F4DD;"/> <b>Sign up for a free consultation</b>. Let’s build a plan that gives you and your family peace of mind. <SpanEmoji value="🌟"/></p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

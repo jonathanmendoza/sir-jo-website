@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function ShePraysNothingHappensToHimBecauseSheKnowsCantCarryTheBurdenAlone({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -56,11 +54,7 @@ the assurance na kahit anong mangyari, secured pa rin ang mga pangarap ng mga an
             <div>
                 <p style={{textIndent: '0', textAlign: 'left'}}><b><SpanEmoji value="&#x1F4DD;"/> Sign-up for a free consultation</b> with me today, and let’s protect the dreams of the people you love most. <SpanEmoji value="❤️"/></p>
             </div>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

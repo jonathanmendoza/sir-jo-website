@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function WithoutRiskManagementYourBusinessLoanCouldTurnIntoYourFamilysLiability({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -55,11 +53,7 @@ function WithoutRiskManagementYourBusinessLoanCouldTurnIntoYourFamilysLiability(
                 <p style={{textIndent: '0', textAlign: 'left'}}>Don’t let your hard work turn into a burden for your loved ones.</p>
                 <p style={{textIndent: '0', textAlign: 'left'}}><b><SpanEmoji value="&#x1F4DD;"/> Sign-up for a free consultation</b> with me today, and let’s secure your family’s future—together.</p>
             </div>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function StabilityIsntRealIfYourFamilysFutureDependsOnHrsBenefitsPackage({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -58,11 +56,7 @@ function StabilityIsntRealIfYourFamilysFutureDependsOnHrsBenefitsPackage({articl
             <HeadlineComponent emojiImg="emoji_u1f4c5.png" text="Take the Next Step"/>
             <p>Don’t let your family’s future be at the mercy of HR.</p>
             <p style={{textIndent: '0', textAlign: 'justify'}}><b><SpanEmoji value="&#x1F4DD;"/> Sign-up for a free consultation</b> with me today, and let’s secure your family with protection na ikaw mismo ang may control.</p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

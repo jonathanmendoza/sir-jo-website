@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function HowIEarn13KPesosPassiveIncomeQuarterlyFromMyFWDInvestmentAccount({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -38,11 +36,7 @@ function HowIEarn13KPesosPassiveIncomeQuarterlyFromMyFWDInvestmentAccount({artic
             <hr/>
             <HeadlineComponent emojiImg="emoji_u1f4c5.png" text="Take the Next Step"/>
             <p style={{textIndent: '0'}}>Let’s talk about how you can start your own FWD investment plan—whether it’s <b>Fast Lane (₱200K+)</b> or <b>Wealth+ (₱1M+)</b>.</p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

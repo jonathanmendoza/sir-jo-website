@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function DoYouKnowTheActualCostOfGettingSeriouslyIllInThePhilippines({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -66,11 +64,7 @@ function DoYouKnowTheActualCostOfGettingSeriouslyIllInThePhilippines({articleIte
             <HeadlineComponent emojiImg="emoji_u1f680.png" text="Let’s Talk About Your Options"/>
             <p>If you’re not sure how much coverage you need, or how it fits your budget — let’s talk. I can help you understand your options and find the best plan for your situation.</p>
             <p><SpanEmoji value="📩"/> Sign-up for a free consultation today and let’s secure your health before life catches you off guard.</p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

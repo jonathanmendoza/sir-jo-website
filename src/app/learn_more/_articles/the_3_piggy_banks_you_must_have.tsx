@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function The3PiggyBanksYouMustHave({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -49,11 +47,7 @@ function The3PiggyBanksYouMustHave({articleItem}: {articleItem: ArticleItem}) {
             <hr/>
             <HeadlineComponent emojiImg="emoji_u1f4c5.png" text="Take the Next Step"/>
             <p style={{textIndent: '0'}}><SpanEmoji value="🔸"/> Let’s start building your 3 Piggy Banks today. Para ikaw at pamilya mo, fully protected sa ngayon at sa future.</p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
         </div>
     );

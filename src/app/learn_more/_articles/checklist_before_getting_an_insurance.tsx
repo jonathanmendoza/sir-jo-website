@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function ChecklistBeforeGettingAnInsurance({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -49,11 +47,7 @@ function ChecklistBeforeGettingAnInsurance({articleItem}: {articleItem: ArticleI
             <hr/>
             <HeadlineComponent emojiImg="emoji_u1f4c5.png" text="Take the Next Step"/>
             <p><SpanEmoji value="&#x1F4DD;"/> Kung gusto mong malaman kung alin sa mga insurance solutions ang bagay sa iyo, let’s talk. Together, we can design a plan that fits your needs today and prepares you for tomorrow.</p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
         </div>
     );

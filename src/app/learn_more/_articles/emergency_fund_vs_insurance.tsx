@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function EmergencyFundVSInsurance({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -60,11 +58,7 @@ function EmergencyFundVSInsurance({articleItem}: {articleItem: ArticleItem}) {
             <hr/>
             <HeadlineComponent emojiImg="emoji_u1f4c5.png" text="Take the Next Step"/>
             <p><SpanEmoji value="&#x1F4DD;"/> Kung gusto mong malaman kung ano ang tamang insurance plan na akma sa’yo at sa pamilya mo, <b>sign-up for a free consultation</b> today. Tutulungan kitang gumawa ng financial shield na bagay sa iyong goals at budget.</p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

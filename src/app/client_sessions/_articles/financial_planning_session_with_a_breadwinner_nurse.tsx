@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function FinancialPlanningSessionWithABreadwinnerNurse({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -99,11 +97,7 @@ function FinancialPlanningSessionWithABreadwinnerNurse({articleItem}: {articleIt
                 <p style={{textIndent: '0', textAlign: 'left'}} className="font-bold">This is your reminder to protect the protector.</p>
             </div>
             <p style={{textIndent: '0', textAlign: 'left'}}><SpanEmoji value="&#x1F4DD;"/> <b>Sign-up for a free financial planning session today.</b></p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

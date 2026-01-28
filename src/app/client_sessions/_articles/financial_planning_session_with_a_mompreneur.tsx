@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function FinancialPlanningSessionWithAMompreneur({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -117,11 +115,7 @@ function FinancialPlanningSessionWithAMompreneur({articleItem}: {articleItem: Ar
                 <p style={{textIndent: '0', textAlign: 'left'}}>Just clarity and guidance.</p>
             </div>
             <p style={{textIndent: '0', textAlign: 'left'}}>Handa akong tumulong.</p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

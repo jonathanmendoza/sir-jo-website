@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function ABreadwinnerInDubaiCarryingEveryoneButHerself({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -118,11 +116,7 @@ function ABreadwinnerInDubaiCarryingEveryoneButHerself({articleItem}: {articleIt
                 <p style={{textIndent: '0', textAlign: 'left'}}>you can book a free consultation below.</p>
             </div>
             <p style={{textIndent: '0', textAlign: 'left'}}><b><SpanEmoji value="&#x1F4DD;"/> Schedule your free financial planning session</b></p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

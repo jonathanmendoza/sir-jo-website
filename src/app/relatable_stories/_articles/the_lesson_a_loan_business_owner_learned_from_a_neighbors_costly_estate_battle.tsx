@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function TheLessonALoanBusinessOwnerLearnedFromANeighborsCostlyEstateBattle({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -119,11 +117,7 @@ function TheLessonALoanBusinessOwnerLearnedFromANeighborsCostlyEstateBattle({art
                 <p style={{textIndent: '0', textAlign: 'left'}}>No pressure, no commitment — just clarity and guidance.</p>
             </div>
             <p style={{textIndent: '0', textAlign: 'left'}}>Your future heirs will thank you someday. <SpanEmoji value="&#x2764;&#xFE0F;"/></p>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

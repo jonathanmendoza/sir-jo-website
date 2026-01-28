@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function WhySheChoseFWD4xCriticalIllnessProtectionPlan({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -96,11 +94,7 @@ function WhySheChoseFWD4xCriticalIllnessProtectionPlan({articleItem}: {articleIt
             <div>
                 <p style={{textIndent: '0', textAlign: 'left'}}><b><SpanEmoji value="&#x1F4DD;"/> Sign-up for a free consultation today</b> and learn how FWD’s 4x Critical Illness Protection Plan can give you <i>peace of mind</i> — no matter what tomorrow brings.</p>
             </div>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr/>
 
         </div>

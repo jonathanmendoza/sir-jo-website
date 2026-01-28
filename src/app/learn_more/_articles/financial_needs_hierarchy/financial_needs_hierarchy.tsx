@@ -8,8 +8,7 @@ import { useContactInfo, useContactInfoCallbacks, usePersonalInfo, usePersonalIn
 import { getSalaryRange, getFundRange, isProduction } from "@/utils";
 import { initializeEventTracking, trackCustomEvent } from "@/utils/event_tracking";
 import type { ArticleItem, FinancialNeedsHierarchySubmitInfo } from "@/types";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 const ENABLE_RESULTS_DISPLAY = !isProduction();
 
@@ -257,9 +256,7 @@ function FinancialNeedsHierarchy({articleItem}: {articleItem: ArticleItem}) {
                     <p style={{textIndent: '0', textAlign: 'left'}}>Ang mahalaga ay <b>nagsisimula ka</b> at alam mo kung saan ka patungo.</p>
                 </div>
                 <p style={{textAlign: 'left'}}>Ang tamang plano ay hindi lang para sa pera, kundi para sa <b>peace of mind</b> ng buong pamilya mo.</p>
-                <Suspense>
-                    <FreeConsultationForm/>
-                </Suspense>
+                <ArticleOfferFreeConsultationComponent dontAddProvider/>
             </>}
 
             <hr/>

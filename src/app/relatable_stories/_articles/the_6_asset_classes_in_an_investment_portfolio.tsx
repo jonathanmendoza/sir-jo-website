@@ -1,9 +1,7 @@
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import FreeConsultationForm from "@/components/FreeConsultationForm";
-import { Suspense } from "react";
-import { FreeConsultationStateProvider } from "@/providers";
 import { ArticleItem } from "@/types";
+import ArticleOfferFreeConsultationComponent from "@/components/ArticleOfferFreeConsultationComponent";
 
 function The6AssetClassesInAnInvestmentPortfolio({articleItem}: {articleItem: ArticleItem}) {
     return (
@@ -62,11 +60,7 @@ function The6AssetClassesInAnInvestmentPortfolio({articleItem}: {articleItem: Ar
                 <p style={{ textIndent: '0', textAlign: 'left' }}>Don’t let one crisis undo years of discipline and sacrifice.</p>
                 <p style={{ textIndent: '0', textAlign: 'left' }}><b><SpanEmoji value="&#x1F4DD;" /> Sign-up for a free financial consultation</b> with me today, and let’s secure your <b>6th asset class</b>—insurance.</p>
             </div>
-            <Suspense>
-                <FreeConsultationStateProvider>
-                    <FreeConsultationForm/>
-                </FreeConsultationStateProvider>
-            </Suspense>
+            <ArticleOfferFreeConsultationComponent/>
             <hr />
 
         </div>
