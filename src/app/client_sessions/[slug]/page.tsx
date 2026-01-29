@@ -28,7 +28,6 @@ export async function generateMetadata({ params }: Props, _parent: ResolvingMeta
         twitter: {
             title: articleItem.title,
             description: articleItem.hook,
-            images: `${BASE_URL}${articleItem.image}`
         }
     } : {}
 }
