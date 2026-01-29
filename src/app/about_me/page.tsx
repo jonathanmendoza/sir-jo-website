@@ -5,13 +5,7 @@ import PagerButton from "@/components/PagerButton";
 import ArticleTitleComponent from "@/components/ArticleTitleComponent";
 import HeadlineComponent from "@/components/HeadlineComponent";
 import SpanEmoji from "@/components/SpanEmoji";
-import { BASE_URL, CLIENT_SESSIONS_ITEMS, MY_FULL_NAME } from "@/constants";
-
-export const metadata: Metadata = {
-    twitter: {
-        images: [`${BASE_URL}/about_me/who_is_sir_jo.png`]
-    }
-}
+import { CLIENT_SESSIONS_ITEMS, MY_FULL_NAME } from "@/constants";
 
 function AboutMePage() {
     return (
