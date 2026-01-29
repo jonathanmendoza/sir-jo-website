@@ -12,6 +12,7 @@ import TheSmartestWayToPassOnWealth from "../../_articles/the_smartest_way_to_pa
 import HowIEarn13KPesosPassiveIncomeQuarterlyFromMyFWDInvestmentAccount from "../../_articles/how_i_earn_13k_pesos_passive_income_quarterly_from_my_fwd_investment_account";
 import ChecklistBeforeGettingAnInsurance from "../../_articles/checklist_before_getting_an_insurance";
 import FinancialNeedsHierarchyContainer from "../../_articles/financial_needs_hierarchy/financial_needs_hierarchy";
+import HowMuchLifeInsuranceDoYouReallyNeed from "../../_articles/how_much_life_insurance_do_you_really_need";
 
 export function getLearnMoreArticleContentByItem(item: ArticleItem) {
     const articleId = item.id;
@@ -28,6 +29,7 @@ export function getLearnMoreArticleContentByItem(item: ArticleItem) {
         case "abca9425": return <HowIEarn13KPesosPassiveIncomeQuarterlyFromMyFWDInvestmentAccount articleItem={item}/>
         case "4f856144": return <ChecklistBeforeGettingAnInsurance articleItem={item}/>
         case "e752693b": return <FinancialNeedsHierarchyContainer articleItem={item}/>
+        case "a3c72299": return <HowMuchLifeInsuranceDoYouReallyNeed articleItem={item}/>
         default: return <></>;
     }
 }

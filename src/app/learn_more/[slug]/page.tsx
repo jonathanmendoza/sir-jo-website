@@ -2,7 +2,7 @@ import SpanEmoji from "@/components/SpanEmoji";
 import ContentComponent from "@/components/ContentComponent";
 import ArticleTitleComponent from "@/components/ArticleTitleComponent";
 import PagerButton from "@/components/PagerButton";
-import { BASE_URL, LEARN_MORE_ITEMS } from "@/constants";
+import { LEARN_MORE_ITEMS } from "@/constants";
 import { getLearnMoreArticleContentByItem } from "./lib";
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";

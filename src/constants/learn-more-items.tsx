@@ -109,5 +109,14 @@ export const LEARN_MORE_ITEMS: LearnMoreItem[] = [
         slug: "financial_needs_hierarchy",
         image: "/learn_more/financial_needs_hierarchy.png",
         hook: "Marami sa atin gustong magsimulang mag-invest o mag-ipon — pero ang tanong, saan nga ba dapat magsimula?"
+    },
+    {
+        id: "a3c72299",
+        emojiImg: "emoji_u1f9ee.png",
+        spanEmoji: <SpanEmoji value="&#x1F9EE;"/>,
+        title: "How Much Life Insurance Do You Really Need?",
+        slug: "how_much_life_insurance_do_you_really_need",
+        image: "/learn_more/how_much_life_insurance_do_you_really_need.png",
+        hook: "🤔 “May insurance naman ako… pero sapat ba talaga?” Isa ito sa pinaka-common na tanong na naririnig ko. Let’s Compute It — Based on Your Real Life Expenses"
     }
 ]

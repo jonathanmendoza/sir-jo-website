@@ -74,6 +74,17 @@ export type FinancialNeedsHierarchySubmitInfo = {
     email: string,
 }
 
+export type HowMuchLifeInsuranceDoYouNeedSubmitInfo = {
+    housing: number,
+    transportation: number,
+    travel: number,
+    regularCommitment: number,
+    food: number,
+    healthCare: number,
+    recreation: number,
+    email: string,
+}
+
 export type VerifyContactInfoError = {
     emailAddress?: string,
     mobileNumber?: string

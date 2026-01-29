@@ -28,7 +28,7 @@ function HomePage() {
                         <hr/>
                         <HeadlineComponent emojiImg="emoji_u2753.png" text="Why Insurance Matters"/>
                         <div className="max-w-[85dvw] lg:max-w-[1280px] overflow-x-auto flex snap-x snap-mandatory space-x-4 p-4">
-                            {LEARN_MORE_ITEMS.slice(0, LEARN_MORE_ITEMS.length - 2).map(item => <CardComponent key={item.id} isSquare title={<>{item.spanEmoji}{` ${item.title}`}</>} image={item.image} ctaText={<><SpanEmoji value="👉"/> Tap to learn more <SpanEmoji value="📘"/></>} to={`/learn_more/${item.id}`}/>)}
+                            {LEARN_MORE_ITEMS.filter(item => !["4f856144", "e752693b", "a3c72299"].includes(item.id)).map(item => <CardComponent key={item.id} isSquare title={<>{item.spanEmoji}{` ${item.title}`}</>} image={item.image} ctaText={<><SpanEmoji value="👉"/> Tap to learn more <SpanEmoji value="📘"/></>} to={`/learn_more/${item.id}`}/>)}
                         </div>
 
                         <hr/>
@@ -51,6 +51,16 @@ function HomePage() {
                         <Link href="/learn_more/financial_needs_hierarchy" className="flex flex-col items-stretch"><img src="/learn_more/financial_needs_hierarchy.png"/></Link>
                         <div className="w-full flex flex-col justify-center items-center animate-gentlePulse">
                             <Link href="/learn_more/financial_needs_hierarchy"><SpanEmoji value="👉"/> Tap here to know the right way <SpanEmoji value="&#x1F9F1;"/></Link>
+                        </div>
+
+                        <hr/>
+                        <HeadlineComponent emojiImg="emoji_u1f9ee.png" text="How Much Life Insurance Do You Really Need?"/>
+                        <p style={{textIndent: '0', textAlign: 'center'}}>Let’s Compute It — Based on <i>Your</i> Real Life Expenses</p>
+                        <p style={{textIndent: '0'}} className="font-bold"><SpanEmoji value="&#x1f914;"/> “May insurance naman ako… pero sapat ba talaga?”</p>
+                        <p style={{textIndent: '0'}}>Isa ito sa pinaka-common na tanong na naririnig ko.</p>
+                        <Link href="/learn_more/how_much_life_insurance_do_you_really_need" className="flex flex-col items-stretch"><img src="/learn_more/how_much_life_insurance_do_you_really_need.png"/></Link>
+                        <div className="w-full flex flex-col justify-center items-center animate-gentlePulse">
+                            <Link href="/learn_more/how_much_life_insurance_do_you_really_need"><SpanEmoji value="👉"/> Tap here to know how much life insurance do you really need <SpanEmoji value="&#x1F9EE;"/></Link>
                         </div>
 
                         <hr/>
