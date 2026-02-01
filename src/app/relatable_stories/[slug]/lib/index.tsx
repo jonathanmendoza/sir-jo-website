@@ -15,6 +15,7 @@ import WhySheChoseFWD4xCriticalIllnessProtectionPlan from "../../_articles/why_s
 import ABreadwinnerInDubaiCarryingEveryoneButHerself from "../../_articles/a_breadwinner_in_dubai_carrying_everyone_but_herself";
 import TheBusinessmanWhoLearnedFromSomeoneElsesPainfulMistake from "../../_articles/the_businessman_who_learned_from_someone_elses_painful_mistake";
 import TheLessonALoanBusinessOwnerLearnedFromANeighborsCostlyEstateBattle from "../../_articles/the_lesson_a_loan_business_owner_learned_from_a_neighbors_costly_estate_battle";
+import HowPaulSecured250MWorthOfAssetsWith25MInstantPamana from "../../_articles/how_paul_secured_250m_worth_of_assets_with_25m_instant_pamana";
 
 export function getRelatableStoriesArticleContentByItem(item: ArticleItem) {
     const articleId = item.id;
@@ -35,6 +36,7 @@ export function getRelatableStoriesArticleContentByItem(item: ArticleItem) {
         case "c8d4bd40": return <ABreadwinnerInDubaiCarryingEveryoneButHerself articleItem={item}/>
         case "e54ce6ab": return <TheBusinessmanWhoLearnedFromSomeoneElsesPainfulMistake articleItem={item}/>
         case "969ca0d3": return <TheLessonALoanBusinessOwnerLearnedFromANeighborsCostlyEstateBattle articleItem={item}/>
+        case "01ef48a2": return <HowPaulSecured250MWorthOfAssetsWith25MInstantPamana articleItem={item}/>
         default: return <></>;
     }
 }

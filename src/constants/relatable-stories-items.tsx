@@ -121,6 +121,7 @@ export const RELATABLE_STORIES_ITEMS: RelatableStoriesItem[] = [
     },
     {
         id: "c8d4bd40",
+        emojiImg: "emoji_u1f1f5.png",
         spanEmoji: <SpanEmoji value="&#x1F1F5;&#x1F1ED;" />,
         title: "A Breadwinner in Dubai, Carrying Everyone But Herself",
         slug: "a_breadwinner_in_dubai_carrying_everyone_but_herself",
@@ -129,6 +130,7 @@ export const RELATABLE_STORIES_ITEMS: RelatableStoriesItem[] = [
     },
     {
         id: "e54ce6ab",
+        emojiImg: "emoji_u1f4bc.png",
         spanEmoji: <SpanEmoji value="&#x1F4BC;" />,
         title: "The Businessman Who Learned From Someone Else’s Painful Mistake",
         slug: "the_businessman_who_learned_from_someone_elses_painful_mistake",
@@ -137,10 +139,20 @@ export const RELATABLE_STORIES_ITEMS: RelatableStoriesItem[] = [
     },
     {
         id: "969ca0d3",
+        emojiImg: "emoji_u1f4bc.png",
         spanEmoji: <SpanEmoji value="&#x1F4BC;" />,
         title: "The Lesson a Loan Business Owner Learned From a Neighbor’s Costly Estate Battle",
         slug: "the_lesson_a_loan_business_owner_learned_from_a_neighbors_costly_estate_battle",
         hook: "Akala ko sapat na ang malaking ipon ko sa banko… Hanggang narinig ko ang kwento ng kapitbahay naming pumanaw.",
         image: "/relatable_stories/the_lesson_a_loan_business_owner_learned_from_a_neighbors_costly_estate_battle.png"
+    },
+    {
+        id: "01ef48a2",
+        emojiImg: "emoji_u1f3d9.png",
+        spanEmoji: <SpanEmoji value="&#x1F3D9;" />,
+        title: "How Paul Secured ₱250M Worth of Assets With ₱25M Instant Pamana",
+        slug: "how_paul_secured_250m_worth_of_assets_with_25m_instant_pamana",
+        hook: "He built ₱250M worth of properties… but what his family needed most when he was gone wasn’t another condo. It was cash — ready, fast, and tax-efficient.",
+        image: "/relatable_stories/how_paul_secured_250m_worth_of_assets_with_25m_instant_pamana.png"
     },
 ]
