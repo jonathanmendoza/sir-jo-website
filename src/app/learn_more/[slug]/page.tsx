@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props, _parent: ResolvingMeta
 }
 
 export function generateStaticParams() {
-    const params = getLearnMoreArticleSlugs().map(slug => ({id: slug}));
+    const params = getLearnMoreArticleSlugs().map(slug => ({slug: slug}));
     return params;
 }
 
